@@ -1,9 +1,15 @@
 extends layout/layout
 
+block variables
+    - var title = "Книга Figured Abstraction"
+    - var pageClass = "book-page"
+    - var pathContentImg = 'static/images/content/'
+    - var pathCommonImg = 'static/images/common/'
+
 block content
 
     .content
-        main.book-page
+        main(class= pageClass)
             include modules/book-figured/book-figured.pug
 
 

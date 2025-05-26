@@ -18,7 +18,7 @@ section.new-books
                                                 </svg>
                                         span.books__star= newBooks[0].star
                                     .books__wrapper
-                                        a.books__link(href="#") Подробнее
+                                        a.books__link(href= newBooks[0].link) Подробнее
                                         span.books__pages #{newBooks[0].pages} страниц
                         li.books__item
                             .books__inner
@@ -34,7 +34,7 @@ section.new-books
                                             s</svg>
                                         span.books__star= newBooks[1].star
                                     .books__wrapper
-                                        a.books__link(href="#") Подробнее
+                                        a.books__link(href= newBooks[1].link) Подробнее
                                         span.books__pages #{newBooks[1].pages} страниц
                         li.books__item
                             .books__inner
@@ -50,7 +50,7 @@ section.new-books
                                             </svg>
                                         span.books__star= newBooks[2].star
                                     .books__wrapper
-                                        a.books__link(href="#") Подробнее
+                                        a.books__link(href= newBooks[2].link) Подробнее
                                         span.books__pages #{newBooks[2].pages} страниц
                         li.books__item
                             .books__inner
@@ -66,5 +66,5 @@ section.new-books
                                             </svg>
                                         span.books__star= newBooks[3].star
                                     .books__wrapper
-                                        a.books__link(href="#") Подробнее
+                                        a.books__link(href= newBooks[3].link) Подробнее
                                         span.books__pages #{newBooks[3].pages} страниц

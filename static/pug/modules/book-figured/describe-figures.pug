@@ -4,7 +4,7 @@ section.book
 	.container
 		.book__wrapper
 			.book__picture
-				img.book__img(src= bookFiguredData.img width= bookFiguredData.width height=bookFiguredData.height alt="Обложка книги - Фигурная абстракция")
+				img.book__img(src= bookFiguredData.img width= bookFiguredData.width height=bookFiguredData.height alt=`Обложка книги - ${bookFiguredData.title}`)
 			.book__inner
 				.book__top
 					.book__line
@@ -21,32 +21,32 @@ section.book
 						h2.book__heading Информация
 						ul.book__info-list
 							li.book__info-item
-								span.book__term Код товара
-								span.book__def= bookFiguredData.information.code
+								span.book__term= bookFiguredData.information[0].term
+								span.book__def= bookFiguredData.information[0].def
 							li.book__info-item
-								span.book__term Издательство
-								span.book__def= bookFiguredData.information.publishing
+								span.book__term= bookFiguredData.information[1].term
+								span.book__def= bookFiguredData.information[1].def
 							li.book__info-item
-								span.book__term Серия
-								span.book__def= bookFiguredData.information.series
+								span.book__term= bookFiguredData.information[2].term
+								span.book__def= bookFiguredData.information[2].def
 							li.book__info-item
-								span.book__term Год издания
-								span.book__def= bookFiguredData.information.year
+								span.book__term= bookFiguredData.information[3].term
+								span.book__def= bookFiguredData.information[3].def
 							li.book__info-item
-								span.book__term Переводчик
-								span.book__def= bookFiguredData.information.translator
+								span.book__term= bookFiguredData.information[4].term
+								span.book__def= bookFiguredData.information[4].def
 							li.book__info-item
-								span.book__term Кол-во страниц
-								span.book__def= bookFiguredData.information.pages
+								span.book__term= bookFiguredData.information[5].term
+								span.book__def= bookFiguredData.information[5].def
 							li.book__info-item
-								span.book__term Тип обложки
-								span.book__def= bookFiguredData.information.cover
+								span.book__term= bookFiguredData.information[6].term
+								span.book__def= bookFiguredData.information[6].def
 							li.book__info-item
-								span.book__term Вес, г
-								span.book__def= bookFiguredData.information.weight
+								span.book__term= bookFiguredData.information[7].term
+								span.book__def= bookFiguredData.information[7].def
 							li.book__info-item
-								span.book__term Возрастные ограничения
-								span.book__def= bookFiguredData.information.ageLimit
+								span.book__term= bookFiguredData.information[8].term
+								span.book__def= bookFiguredData.information[8].def
 					.book__annotation
 						h2.book__heading= bookAnnotation.heading
 						p.book__text= bookAnnotation.text

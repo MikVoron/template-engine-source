@@ -1,33 +1,16 @@
 include reviews-data.pug
 
 section.reviews
-                .container
-                    h2.reviews__title.section__title Отзывы
-                    ul.reviews__list
-                        li.reviews__item
-                            .reviews__wrapper
-                                .reviews__info
-                                    .reviews__box-images
-                                        img.reviews__img(src= reviews[0].picture alt="Фото автора отзыва" width="80" height="80")
-                                    .reviews__box
-                                        h3.reviews__name= reviews[0].name
-                                        p.reviews__count Купил #{reviews[0].count} книг
-                                p.reviews__review= reviews[0].review
-                        li.reviews__item
-                            .reviews__wrapper
-                                .reviews__info
-                                    .reviews__box-images
-                                        img.reviews__img(src=`${pathContentImg}review-2.jpg` alt="Фото автора отзыва" width="80" height="80")
-                                    .reviews__box
-                                        h3.reviews__name= reviews[1].name
-                                        p.reviews__count Купила #{reviews[1].count} книг
-                                p.reviews__review= reviews[1].review
-                        li.reviews__item
-                            .reviews__wrapper
-                                .reviews__info
-                                    .reviews__box-images
-                                        img.reviews__img(src=`${pathContentImg}review-3.jpg` alt="Фото автора отзыва" width="80" height="80")
-                                    .reviews__box
-                                        h3.reviews__name= reviews[2].name
-                                        p.reviews__count Купила #{reviews[2].name} книг
-                                p.reviews__review= reviews[2].review
+    .container
+        h2.reviews__title.section__title Отзывы
+        ul.reviews__list
+            each review in reviews
+                li.reviews__item
+                    .reviews__wrapper
+                        .reviews__info
+                            .reviews__box-images
+                                img.reviews__img(src= review.picture alt="Фото автора отзыва" width="80" height="80")
+                            .reviews__box
+                                h3.reviews__name= review.name
+                                p.reviews__count Купил #{review.count} книг
+                        p.reviews__review= review.review

@@ -1,15 +1,14 @@
+mixin breadcrumbs(text, link)
+    li.breadcrumbs__item
+        a.breadcrumbs__link(href= link)= text
 section.breadcrumbs
     .container
         ul.breadcrumbs__list
             if pageClass === 'book-page'
-                li.breadcrumbs__item
-                    a.breadcrumbs__link(href="index.html") Главная страница
-                li.breadcrumbs__item
-                    span.breadcrumbs__text Каталог книг
-                li.breadcrumbs__item
-                    span.breadcrumbs__text Фигурная абстракция
+                +breadcrumbs("Главная", "index.html")
+                +breadcrumbs('Каталог книг', 'catalog.html')
+                +breadcrumbs('Фигурная абстракция')
+
             else
-                li.breadcrumbs__item
-                    a.breadcrumbs__link(href="index.html") Главная страница
-                li.breadcrumbs__item
-                    span.breadcrumbs__text Каталог книг
+                +breadcrumbs("Главная", "index.html")
+                +breadcrumbs('Каталог книг', 'catalog.html')

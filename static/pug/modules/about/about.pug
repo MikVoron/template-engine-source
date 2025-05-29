@@ -1,14 +1,16 @@
+mixin about(heading, text)
+    li.about__item
+        .about__wrapper
+            h3.about__heading= heading
+            //- about[0].heading
+            p.about__text= text
+            //- about[0].text
+
 include about-data.pug
 
 section.about
     .container
         h2.about__title.section__title О нас
         ul.about__list
-            li.about__item
-                .about__wrapper
-                    h3.about__heading= about[0].heading
-                    p.about__text= about[0].text
-            li.about__item
-                .about__wrapper
-                    h3.about__heading= about[1].heading
-                    p.about__text= about[1].text
+            +about(about[0].heading, about[0].text)
+            +about(about[1].heading, about[1].text)

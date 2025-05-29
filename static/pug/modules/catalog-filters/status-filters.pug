@@ -1,11 +1,11 @@
+mixin radio-box(title, type, id, name, value, checked)
+    .catalog-filter__box.catalog-filter__box--radio
+        input.catalog-filter__radio(type= type, name= name, id= id, value= value, checked=checked)
+        label.catalog-filter__label(for= id)= title
+
 fieldset.catalog-filter__fieldset
-            p.catalog-filter__legend Статус
-                .catalog-filter__box.catalog-filter__box--radio
-                    input#bestsellers.catalog-filter__radio(type="radio" name="status" value="bestsellers")
-                    label.catalog-filter__label(for="bestsellers") Хиты продаж
-                .catalog-filter__box.catalog-filter__box--radio
-                    input#news-books.catalog-filter__radio(type="radio" name="status" value="news-books")
-                    label.catalog-filter__label(for="news-books") Новинки
-                .catalog-filter__box.catalog-filter__box--radio
-                    input#preorder.catalog-filter__radio(type="radio" name="status" value="preorder")
-                    label.catalog-filter__label(for="preorder") Предзаказ
+    p.catalog-filter__legend Статус
+        +radio-box("Хиты продаж", "radio", "bestsellers", "status", "bestsellers")
+        +radio-box("Новинки", "radio", "news-books", "status", "news-books", true)
+        +radio-box("Предзаказ", "radio", "preorder", "status", "preorder")
+

@@ -1,11 +1,21 @@
+mixin radio-box(title, type, id, name, value, checked)
+    .catalog-filter__box.catalog-filter__box--radio
+        input.catalog-filter__radio(type= type, name= name, id= id, value= value, checked=checked)
+        label.catalog-filter__label(for= id)= title
+
 fieldset.catalog-filter__fieldset
             p.catalog-filter__legend Наличие
-                .catalog-filter__box.catalog-filter__box--radio
-                    input#availability.catalog-filter__radio(type="radio" name="status" value="availability")
-                    label.catalog-filter__label(for="availability") В магазине
-                .catalog-filter__box.catalog-filter__box--radio
-                    input#in-the-internet-shop.catalog-filter__radio(type="radio" name="status" value="in-the-internet-shop")
-                    label.catalog-filter__label(for="in-the-internet-shop") В интернет-магазине
-                .catalog-filter__box.catalog-filter__box--radio
-                    input#under-the-order.catalog-filter__radio(type="radio" name="status" value="under-the-order")
-                    label.catalog-filter__label(for="under-the-order") Под заказ
+                +radio-box("В магазине", "radio", "status", "availability", "availability")
+                +radio-box("В интернет-магазине", "radio", "status", "in-the-internet-shop", "in-the-internet-shop", true)
+                +radio-box("Под заказ", "radio", "status", "under-the-ordery", "under-the-ordery")
+
+
+                //- .catalog-filter__box.catalog-filter__box--radio
+                //-     input#availability.catalog-filter__radio(type="radio" name="status" value="availability")
+                //-     label.catalog-filter__label(for="availability") В магазине
+                //- .catalog-filter__box.catalog-filter__box--radio
+                //-     input#in-the-internet-shop.catalog-filter__radio(type="radio" name="status" value="in-the-internet-shop")
+                //-     label.catalog-filter__label(for="in-the-internet-shop") В интернет-магазине
+                //- .catalog-filter__box.catalog-filter__box--radio
+                //-     input#under-the-order.catalog-filter__radio(type="radio" name="status" value="under-the-order")
+                //-     label.catalog-filter__label(for="under-the-order") Под заказ
